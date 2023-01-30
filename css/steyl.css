@@ -1,5 +1,14 @@
 :root {
     --main-transition: 0.3s;
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+    --bottom-color: #111d2aa9;
+    --white-color: white;
+    --main-border-radius: 6px;
 }
 /* Start Global Rules */
 html{
@@ -7,6 +16,9 @@ html{
 }
 *{
     box-sizing: border-box;
+}
+*:focus {
+    outline: none;
 }
 body{
     font-family: 'Work Sans', sans-serif;
@@ -112,5 +124,316 @@ ul{
         display: none;
     }
 }
-
 /* End Sidebar */
+/* Start Head */
+.head .search input{
+    padding-left: 28px;
+    margin-left: 5px;
+    width: 160px;
+    border: 1px solid #ccc;
+    border-radius: var(--main-border-radius);
+    font-size: 14px;
+    transition: var(--main-transition);
+}
+.head .search input:focus {
+    width: 200px;
+}
+.head .search input:focus::placeholder{
+    color: transparent;
+}
+.head .search::before {
+    font-family: var(--fa-style-family-classic);
+    content: "\f002";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: var(--grey-color);
+}
+.head .icons .notification {
+    transform: translateY(7px);
+}
+.head .icons .notification::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    right: -5px;
+    top: -8px;
+}
+.head .icons img{
+    width: 32px;
+    margin-left: 10px; 
+}
+/* End Head */
+/* Start Dashboard */
+.content > h1 {
+    position: relative;
+    margin: 20px 20px 40px;
+}
+.content > h1::before,
+.content > h1::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    bottom: -10px;
+    left: 0;
+}
+.content > h1::before {
+    content: "";
+    width: 160px;
+    background-color: white;
+}
+.content > h1::after {
+    content: "";
+    width: 60px;
+    background-color: black;
+}
+/* End Dashboard */
+/* Start wrapper */
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 40px;
+    margin: 0 20px 40px;
+}
+@media (max-width: 767px) {
+    .wrapper {
+    grid-template-columns: minmax(200px, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px; 
+    }
+}
+/* End wrapper */
+/* Start Welcome Widget */
+.welcome {
+    background-color: var(--white-color);
+    overflow: hidden;
+    border-radius: var(--main-border-radius);
+}
+@media (max-width:767px) {
+    .welcome {
+        text-align: center;
+    } 
+}
+.welcome .intro {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #eee;
+}
+.welcome .intro img {
+    width: 180px;
+    margin-bottom: -10px;
+}
+@media (max-width:767px) {
+    .welcome .intro img {
+        display: none;
+    } 
+}
+.welcome .intro .teitel {
+    font-size: 22px;
+    margin-top: 0;
+}
+.welcome .intro .mei-neam {
+    color: var(--grey-color);
+}
+.welcome .avter {
+    width: 64px;
+    height: 64px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 2px;
+    box-shadow: 0 0 5px #ddd;
+    margin-left: 20px;
+    margin-top: -32px;
+}
+@media (max-width:767px) {
+    .welcome .avter {
+        margin-left: 0;
+    } 
+}
+.welcome .body {
+    display: flex;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin: 20px 0;
+    padding: 20px;
+    text-align: center;
+}
+@media (max-width:767px) {
+    .welcome .body {
+        flex-direction: column;
+    } 
+    .welcome .body > div:not(:last-child) {
+        margin-bottom: 25px;
+    }
+}
+.welcome .body > div {
+    flex: 1;
+}
+.welcome .body > div > p {
+    margin: 0;
+}
+.welcome .body > div > span {
+    display: block;
+    margin-top: 10px;
+    color: var(--grey-color);
+}
+.welcome a {
+    position: relative;
+    display: block;
+    background-color: var(--blue-color);
+    width: fit-content;
+    margin: 0 15px 15px auto;
+    color: white;
+    padding: 10px 15px;
+    border-radius: var(--main-border-radius);
+    transition: var(--main-transition);
+}
+.welcome a:hover {
+    background-color: var(--bottom-color);
+}
+/* End Welcome Widget */
+/* Start Quick Draft */
+.quick {
+    background-color: var(--white-color);
+    border-radius: var(--main-border-radius);
+    padding: 20px;
+    overflow: hidden;
+}
+.quick form > textarea {
+    resize: none;
+}
+.quick form .save {
+    background-color: var(--blue-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--main-border-radius);
+    display: block;
+    margin: 0 15px 15px auto;
+    transition: var(--main-transition);
+}
+.quick form .save:hover {
+    background-color: var(--bottom-color);
+}
+/* End Quick Draft */
+/* Start Yearly Targets */
+.targets .target-row .icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+}
+.targets .details {
+    flex: 1;
+}
+.targets .details .progress {
+    height: 4px;
+}
+.targets .details .progress > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+.targets .details .progress > span span {
+    position: absolute;
+    bottom: 16px;
+    right: -16px;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+.targets .details .progress > span span::after {
+    content: "";
+    border-color: transparent;
+    border-width: 5px;
+    border-style: solid;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.targets .details .progress > .blue span::after {
+    border-top-color: var(--blue-color);
+}
+  .targets .details .progress > .orange span::after {
+    border-top-color: var(--orange-color);
+}
+  .targets .details .progress > .green span::after {
+    border-top-color: var(--green-color);
+}
+.blue .icon,
+.blue .progress {
+    background-color: rgb(0 117 255 / 20%);
+}
+.orange .icon,
+.orange .progress {
+    background-color: rgb(245 158 11 / 20%);
+}
+.green .icon,
+.green .progress {
+    background-color: rgb(34 197 94 / 20%);
+}
+/* End Yearly Targets */
+/* Start Tickets Statistics */
+.tickets {
+    background-color: var(--white-color);
+    overflow: hidden;
+    padding: 20px;
+    border-radius: var(--main-border-radius);
+}
+.tickets .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    text-align: center;
+}
+.tickets .boxes .box {
+    position: relative;
+    border: 1px solid #ccc;
+    width: calc(50% - 20px);
+    padding: 20px;
+    z-index: 2;
+    border-radius: var(--main-border-radius);
+}
+.tickets .boxes .box::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #777;
+    width: 0px;
+    height: 100%;
+    transition: var(--main-transition);
+}
+.tickets .boxes .box:hover:before {
+    background-color: var(--bottom-color);
+    width: 100%;
+    z-index: -1;
+}
+@media (max-width:767px) {
+    .tickets .boxes .box {
+        width: calc(100% - 20px);
+    }
+}
+.tickets .boxes .box > i {
+    display: block;
+}
+.tickets .boxes .box > span {
+    display: block; 
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+/* End Tickets Statistics */
