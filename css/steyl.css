@@ -434,6 +434,90 @@ ul{
     font-weight: bold;
     margin-bottom: 5px;
 }
-
-
 /* End Tickets Statistics */
+/* Start Latest News */
+.latest-news {
+    background-color: var(--white-color);
+    overflow: hidden;
+    padding: 20px;
+    border-radius: var(--main-border-radius);
+}
+@media (max-width:767px) {
+    .latest-news {
+        text-align: center;
+    }
+}
+.latest-news .news-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.latest-news .news-row:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+@media (max-width:767px) {
+    .latest-news .news-row {
+        display: block;
+    }
+}
+.latest-news .news-row > img {
+    width: 100px;
+    border-radius: var(--main-border-radius);
+    margin-right: 15px;
+}
+.latest-news .news-row .info {
+    flex: 1;
+}
+.latest-news .news-row .info > h3 {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+.latest-news .news-row .info > p {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--grey-color);
+}
+@media (max-width:767px) {
+    .latest-news .news-row .btn-shape {
+        width: fit-content;
+        margin: 10px auto;
+
+    }
+}
+/* End Latest News */
+/* Start Latest Tasks */
+.latest-tasks {
+    background-color: var(--white-color);
+    overflow: hidden;
+    padding: 20px;
+    border-radius: var(--main-border-radius);
+}
+.latest-tasks .task-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.latest-tasks .task-row:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+.latest-tasks .task-row .info {
+    flex: 1;
+}
+.latest-tasks .task-row .info > h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.latest-tasks .task-row .info > p {
+    margin: 0;
+    color: var(--grey-color);
+}
+.latest-tasks .task-row i {
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+.latest-tasks .task-row i:hover {
+    color: red;
+}
+/* End Latest Tasks */
