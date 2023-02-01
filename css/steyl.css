@@ -521,3 +521,83 @@ ul{
     color: red;
 }
 /* End Latest Tasks */
+/* Start Top Search Word Widget */
+.search-items {
+    padding: 20px;
+    background-color: var(--white-color);
+    border-radius: var(--main-border-radius);
+    overflow: hidden;
+}
+.search-items .items-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: var(--grey-color);
+}
+.search-items .items {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+/* End Top Search Word Widget */
+/* Start Latest Uploads Widget */
+.last-uploads {
+    padding: 20px;
+    background-color: var(--white-color);
+    border-radius: var(--main-border-radius);
+    overflow: hidden;
+}
+.last-uploads > ul > li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+/* End Latest Uploads Widget */
+/* Start Last Project Progress Widget */
+.last-project {
+    padding: 20px;
+    border-radius: var(--main-border-radius);
+    background-color: var(--white-color);
+    overflow: hidden
+}
+.last-project > ul::before{
+    content: "";
+    position: absolute;
+    left: 11px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--blue-color);
+}
+.last-project > ul > li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+.last-project > ul > li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid white;
+    outline: 2px solid var(--blue-color);
+    margin-right: 15px;
+    z-index: 1;
+}
+.last-project > ul > li.done::before {
+    background-color: var(--blue-alt-color);
+}
+.last-project > ul > li.current::before {
+    background-color: var(--blue-alt-color);
+    animation: change-color 0.8s infinite alternate;
+}
+@keyframes change-color {
+    from {
+      background-color: var(--blue-color);
+    }
+    to {
+      background-color: white;
+    }
+  }
+/* End Last Project Progress Widget */
